@@ -53,12 +53,12 @@ section#actions{
 }
 
 #ring_off.active{
-  width: 76;
-  height: 76;
-  background-color: #e00000;
+  transform: scale(1.1, 1.1);
   border-radius: 40px;
+  background-color: #e00000;
   background-image: url(../images/hang_up_active.png);
-  opacity: 1
+  opacity: 1;
+  transition: transform 0.1s ease-in;
 }
 
 #get_call{
@@ -84,7 +84,7 @@ section#actions{
   background-color: #27c8c2;
   background-image: url(../images/pick_up_active.png);
   opacity: 1;
-  transition: transform 0.3s;
+  transition: transform 0.1s ease-in;
 }
        
 #sms{
@@ -99,12 +99,12 @@ section#actions{
 }
 
 #sms.active{
-  width: 76;
-  height: 76;
+  transform: scale(1.1, 1.1);
   border-radius: 40px;
   background-color: #fff;
   background-image: url(../images/SMS_active.png);
   opacity: 1;
+  transition: transform 0.1s ease-in;
 }
 
 #bg.call_declined{
