@@ -1,0 +1,21 @@
+{
+  "name": "Prototype call",
+  "description": "Prototype call",
+  "type": "web",
+  "orientation": "default",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "launch_path": "/index.html",
+  "locales": {
+    "en-US": {
+      "name": "Prototype call",
+      "description": "Gaia Ringtone Picker"
+    }
+  },
+  "icons": {
+    "60": "/style/icons/icon.png"
+  },
+  "default_locale": "en-US"
+}
