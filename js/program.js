@@ -11,7 +11,6 @@ $(document).ready(function(){
         //updateCounterStatus( $start_counter, counts[ 0 ] );
       },
       drag: function() {
-        
         //console.log( "Drag: "+counts[ 1 ]);
         var left = $("#circle").position().left;
  
