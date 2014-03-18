@@ -5,13 +5,17 @@ $(document).ready(function(){
   var nStartPos     = 113,
       nCircleSize   = 64,
       dActions      = $('#actions'),
+      dHangUp       = $('#hang_up'),
+      dPickUp       = $('#pick_up'),
+      dSms          = $('#sms'),
       dDraggable    = $('#circle'),
       dCircle       = $('.circle'),
       svgElement    = $('.svgElement'),
-      nMargin       = 50,
+      nMargin       = 20,
       colorLeft     = '#e00000',
       colorRight    = '#27c8c2',
-      colorDefault  = 'white',
+      colorDefault  = '#b5b5b5',
+      colorWhite    = 'white',
       nIncrement;
 
   dDraggable.draggable(
@@ -23,24 +27,67 @@ $(document).ready(function(){
 
       start : function() {
         dActions.css('opacity',1);
+        dCircle.css('opacity',1);
       },
       drag  : function() {
         if( dDraggable.position().left > nStartPos ) {
+          // Drag Right ---------------------
           nIncrement = nCircleSize + (dDraggable.position().left - nStartPos);
           dCircle.css({
             'width' : nIncrement
           });
-          svgElement.css('fill',colorRight);
+          svgElement.css('fill',colorDefault);
+          if( dDraggable.position().left > nStartPos +65 ) {
+            dCircle.css({
+              'width' : 177
+            });
+            svgElement.css('fill',colorRight);
+            dPickUp.addClass('pick_up_active');
+          } else {
+            dPickUp.removeClass('pick_up_active');
+          }
+
         } else {
+          // Drag Left ---------------------
           nIncrement = (nStartPos - dDraggable.position().left) + nCircleSize;
           dCircle.css({
             'width' : nIncrement,
             'left'  : dDraggable.position().left
           });
+
           if( dDraggable.position().left < nStartPos - nMargin ) {
-            svgElement.css('fill',colorLeft);
+            svgElement.css('fill',colorWhite);
+
+            if( dDraggable.position().left < 75 && dDraggable.position().left > 50 ) {
+              dCircle.css({
+                'width' : 120,
+                'left'  : 57
+              });
+              dSms.addClass('sms_active');
+            } else {
+              dSms.removeClass('sms_active');
+            }
+
+            if( dDraggable.position().left < 50 ) {
+              dCircle.css({
+                'width' : 177,
+                'left'  : 0
+              });
+              svgElement.css('fill',colorLeft);
+              dSms.removeClass('sms_active');
+              dHangUp.addClass('hang_up_active');
+
+            } else {
+              dCircle.css({
+                'transition': 'none'
+              });
+              dHangUp.removeClass('hang_up_active');
+            }
+
           } else {
-            svgElement.css('fill',colorDefault);
+
+            svgElement.css('fill',colorWhite);
+            dHangUp.removeClass('hang_up_active');
           }
         }
       },
@@ -49,16 +96,30 @@ $(document).ready(function(){
           'width' : nCircleSize,
           'left'  : dDraggable.position().left
         });
-        svgElement.css('fill',colorDefault);
+        svgElement.css('fill',colorWhite);
         dActions.css('opacity',0.5);
+        dCircle.css('opacity',0);
+        dHangUp.removeClass('hang_up_active');
       }
     }
   );
 
-  $( "#ring_off" ).droppable({
+  $( "#hang_up" ).droppable({
     accept : "#circle",
     drop   : function( event, ui ) {
       alert('colgar');
+    }
+  });
+  $( "#pick_up" ).droppable({
+    accept : "#circle",
+    drop   : function( event, ui ) {
+      alert('Hello...');
+    }
+  });
+  $( "#sms" ).droppable({
+    accept : "#circle",
+    drop   : function( event, ui ) {
+      alert('SMS...');
     }
   });
 })

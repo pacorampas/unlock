@@ -45,17 +45,56 @@ section#actions {
   height: 64px;
   left: calc(50% - 32px);
   z-index: 1;
+  opacity: 0;
 }
 
-.circle svg{
-  width: 100%;
-}
-
-#ring_off {
-  width: 100px;
-  height: 100px;
-  background: none repeat scroll 0% 0% ;
+.init-icon {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  background: url(../images/Toggle-2.png) 0 0 no-repeat;
+  min-width: 64px;
+  width: 64px;
+  height: 64px;
+  left: calc(50% - 32px);
+}
+
+#hang_up {
+  background: url(../images/hang_up.png) 50% 50% no-repeat;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  z-index: 101;
+}
+
+#hang_up.hang_up_active {
+  background: url(../images/hang_up_active.png) 50% 50% no-repeat;
+}
+
+#sms {
+  background: url(../images/sms.png) 50% 50% no-repeat;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  bottom: 20px;
+  left: 66px;
+  z-index: 101;
+}
+
+#sms.sms_active {
+  background: url(../images/sms_active.png) 50% 50% no-repeat;
+}
+
+#pick_up {
+  background: url(../images/pick_up.png) 50% 50% no-repeat;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  z-index: 101;
+}
+
+#pick_up.pick_up_active {
+  background: url(../images/pick_up_active.png) 50% 50% no-repeat;
 }
