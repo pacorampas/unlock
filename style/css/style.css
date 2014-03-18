@@ -26,7 +26,6 @@ section#actions {
   bottom: 20px;
   left: 15px;
   opacity: 0.5;
-  /*background: none repeat scroll 0% 0% #F00;*/
 }
 
 #circle {
@@ -41,12 +40,15 @@ section#actions {
 
 .circle {
   position: absolute;
-  background: url(../images/background.svg) 0 0;
   min-width: 64px;
   width: 64px;
   height: 64px;
   left: calc(50% - 32px);
   z-index: 1;
+}
+
+.circle svg{
+  width: 100%;
 }
 
 #ring_off {
