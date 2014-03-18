@@ -10,7 +10,8 @@
 	<script type="text/javascript" src="js/program.js"></script>
 </head>
 <body>
-	<section id='bg'>
+	<section class="screen main">
+		<a href="index.html" class='index'></a>
 		<div id='hang_up'></div>
 		<div id='sms'></div>
 		<div id='pick_up'></div>
@@ -58,9 +59,10 @@
 			<div class='init-icon'></div>
 		</section>
 	</section>
-  <section id='bg' class='call_declined disabled reload'></section>
-	<section id='bg' class='call_accepted disabled reload'></section>
-	<section id='bg' class='sms_accepted disabled reload'></section>
+
+	<section class='screen call-declined disabled js-reload'></section>
+	<section class='screen call-accepted disabled js-reload'></section>
+	<section class='screen sms-accepted disabled js-reload'></section>
 
 </body>
 </html>

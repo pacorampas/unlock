@@ -3,7 +3,14 @@
 	margin: 0;
 }
 
-section#bg {
+.index {
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  display: block;
+}
+
+.screen {
   background-image: url(../images/background-1.png);
   background-repeat: no-repeat;
   position: absolute;
@@ -13,10 +20,26 @@ section#bg {
   left: 0;
   width: 320px;
   height: 480px;
+  transition: opacity .35s ease;
 }
 
-section#bg.two {
-  background-image: url(../images/background-2.png);
+.call-accepted {
+  background-image: url(../images/call-accepted.png);
+}
+
+.call-declined {
+  background-image: url(../images/call-declined.png);
+}
+
+.sms-accepted {
+  background-image: url(../images/sms_screen.png);
+}
+
+
+
+.disabled{
+  z-index: -1;
+  opacity: 0;
 }
 
 section#actions {
@@ -26,6 +49,7 @@ section#actions {
   bottom: 20px;
   left: 15px;
   opacity: 0.5;
+  z-index: 10;
 }
 
 #circle {
@@ -58,7 +82,8 @@ section#actions {
 }
 
 #hang_up {
-  background: url(../images/hang_up.png) 50% 50% no-repeat;
+  background: url(../images/hang_up.svg) 50% 50% no-repeat;
+  background-size: 36px;
   width: 64px;
   height: 64px;
   position: absolute;
@@ -68,11 +93,12 @@ section#actions {
 }
 
 #hang_up.hang_up_active {
-  background: url(../images/hang_up_active.png) 50% 50% no-repeat;
+  background-image: url(../images/hang_up_active.svg);
 }
 
 #sms {
-  background: url(../images/sms.png) 50% 50% no-repeat;
+  background: url(../images/sms_active.svg) 50% 50% no-repeat;
+  background-size: 22px;
   width: 64px;
   height: 64px;
   position: absolute;
@@ -82,11 +108,12 @@ section#actions {
 }
 
 #sms.sms_active {
-  background: url(../images/sms_active.png) 50% 50% no-repeat;
+  background-image: url(../images/sms.svg);
 }
 
 #pick_up {
-  background: url(../images/pick_up.png) 50% 50% no-repeat;
+  background: url(../images/pick_up.svg) 50% 50% no-repeat;
+  background-size: 28px;
   width: 64px;
   height: 64px;
   position: absolute;
@@ -96,5 +123,5 @@ section#actions {
 }
 
 #pick_up.pick_up_active {
-  background: url(../images/pick_up_active.png) 50% 50% no-repeat;
+  background-image: url(../images/pick_up_active.svg);
 }

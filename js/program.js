@@ -107,19 +107,31 @@ $(document).ready(function(){
   $( "#hang_up" ).droppable({
     accept : "#circle",
     drop   : function( event, ui ) {
-      alert('colgar');
+      $('.call-declined').removeClass('disabled');
+      $('.main').addClass('disabled');
     }
   });
   $( "#pick_up" ).droppable({
     accept : "#circle",
     drop   : function( event, ui ) {
-      alert('Hello...');
+      $('.call-accepted').removeClass('disabled');
+      $('.main').addClass('disabled');
     }
   });
   $( "#sms" ).droppable({
     accept : "#circle",
     drop   : function( event, ui ) {
-      alert('SMS...');
+      $('.sms-accepted').removeClass('disabled');
+      $('.main').addClass('disabled');
     }
   });
-})
+
+  $('.js-reload').click(function(){
+    location.reload();
+  });
+
+  $('.js-main').click(function(){
+    window.location = 'index.html';
+  });
+
+});

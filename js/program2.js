@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
   $( "#circle" ).draggable(
-  	{ 
+  	{
   		containment: "parent",
       revert: true,
       revertDuration : 200
   	}
   );
-  
+
   $( "#ring_off" ).droppable({
   	accept: "#circle",
       drop: function( event, ui ) {
@@ -30,7 +30,7 @@ $(document).ready(function(){
   $( "#get_call" ).droppable({
     accept: "#circle",
       drop: function( event, ui ) {
-        $('#bg.call_accepted').removeClass('disabled');
+        $('.call_accepted').removeClass('disabled');
       },
       over: function( event, ui ) {
         $('#circle').css({
@@ -66,7 +66,7 @@ $(document).ready(function(){
   });
 
   $('.reload').click(function(){
-    location.reload(); 
+    location.reload();
   });
 
 });
