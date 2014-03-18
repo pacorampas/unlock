@@ -4,6 +4,7 @@ $(document).ready(function(){
   	{ 
   		containment: "parent",
       revert: true,
+      revertDuration : 200
   	}
   );
   

@@ -24,11 +24,10 @@ section#bg.two{
 
 section#actions{
   position: absolute;
-  bottom: -100px;
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
-  left: calc( 50% - 150px );
+  bottom: -90px;
+  width: 290px;
+  height: 290px;
+  left: calc(50% - 145px);
 }
 
 #circle{
@@ -42,67 +41,87 @@ section#actions{
 }
 
 #ring_off{
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background-image: url(../images/hang_up.png);
-  background-repeat: no-repeat;
-  background-position: center;
+  bottom: -12px;
+  left: -12px;
 }
 
-#ring_off.active{
+#ring_off:before{
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 15px;
+  width: 80px;
+  height: 80px;
+  background: transparent url(../images/hang_up.svg) center no-repeat;
+  background-size: 36px;
+}
+
+#ring_off.active:before{
   transform: scale(1.1, 1.1);
   border-radius: 40px;
+  border-width: 0;
   background-color: #e00000;
-  background-image: url(../images/hang_up_active.png);
+  background-image: url(../images/hang_up_active.svg);
   opacity: 1;
-  transition: transform 0.1s ease-in;
+  transition: background 0.1s, transform 0.1s ease-in;
 }
 
 #get_call{
-  width: 76px;
-  height: 76px;
+  width: 120px;
+  height: 120px;
   border-radius: 40px;
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background-image: url(../images/pick_up.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  
-  
+  bottom: -12px;
+  right: -12px;
 }
 
-#get_call.active{
-  /*width: 80px;
-  height: 80px;*/
-  
+#get_call:before{
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 15px;
+  width: 80px;
+  height: 80px;
+  background: transparent url(../images/pick_up.svg) center no-repeat;
+  background-size: 28px;
+}
+
+#get_call.active:before{
   transform: scale(1.1, 1.1);
   border-radius: 40px;
   background-color: #27c8c2;
-  background-image: url(../images/pick_up_active.png);
+  background-image: url(../images/pick_up_active.svg);
   opacity: 1;
-  transition: transform 0.1s ease-in;
+  transition: background 0.1s, transform 0.1s ease-in;
 }
        
 #sms{
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   position: absolute;
-  bottom: 124px;
-  left: calc(50% - 40px);
-  background-image: url(../images/SMS.png);
-  background-repeat: no-repeat;
-  background-position: center;
+  bottom: 104px;
+  left: calc(50% - 60px);
 }
 
-#sms.active{
+#sms:before{
+  position: absolute;
+  content: "";
+  left: 20px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  background: transparent url(../images/sms.svg) center no-repeat;
+  background-size: 22px;
+}
+
+#sms.active:before{
   transform: scale(1.1, 1.1);
   border-radius: 40px;
   background-color: #fff;
-  background-image: url(../images/SMS_active.png);
+  background-image: url(../images/sms.svg);
   opacity: 1;
   transition: transform 0.1s ease-in;
 }
