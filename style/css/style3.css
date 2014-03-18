@@ -11,10 +11,10 @@
 }
 
 .screen {
-  background-image: url(../images/background-1.png);
+  background-image: url(../images/background-3.png);
   background-repeat: no-repeat;
   position: absolute;
-  top: -1rem;
+  top: -20px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -106,9 +106,15 @@ section#actions {
   z-index: 101;
 }
 
-#sms:active{
-  transform: scale(1.3, 1.3);
-  transition: background 0.1s, transform 0.1s ease-in;
+#sms::before {
+  content: "Message";
+  font-style: italic;
+  color: #575757;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  font-size: 13px;
+  width: 100%;
 }
 
 #sms.sms_active {
