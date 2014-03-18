@@ -4,23 +4,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>Prototype Call Actions</title>
-	<style>
-	a {
-		display: block;
-		margin: 1rem;
-		padding: 1rem;
-		text-align: center;
-		text-decoration: none;
-		font-size: 1.6rem;
-		color: white;
-		background-color: #FF4E00;
-		border-radius: 0.3rem;
-	}
-	</style>
+  <script>
+    // Trun it to false to always install 'normal' package
+    var supportHIDPI = false;
+    var isFFOS = ("mozApps" in navigator && navigator.userAgent.search("Mobile") != -1);
+
+    if ( isFFOS ) {
+      var manifestUrl = 'http://pacorampas.github.io/unlock/package/package.manifest';
+      var req = navigator.mozApps.installPackage(manifestUrl);
+      req.onsuccess = function() {
+        console.log(this.result.origin);
+      };
+      req.onerror = function() {
+        console.log(this.error.name);
+      };
+
+    } else {
+      window.location.href = "list.html"
+    }
+
+  </script>
 </head>
 <body>
-	<a href="demo1.html">Demo1</a>
-	<a href="demo2.html">Demo2</a>
-	<a href="demo3.html">Demo3</a>
 </body>
 </html>
